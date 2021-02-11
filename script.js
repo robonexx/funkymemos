@@ -21,8 +21,8 @@ function addNewMemo(text = '') {
     // and added ternary operator with dynamic classes
     memo.innerHTML = `
         <div class="memo-btns">
-            <button class="edit-btn"><i class="far fa-edit"></i></button>
-            <p>Edit/Save</p>
+            <button class="edit-btn"><i class="far fa-edit"></i><i class="fas fa-thumbtack"></i></button>
+            <p>Edit/Close</p>
             <button class="delete-btn"><i class="far fa-trash-alt"></i></button>
         </div>
         <div class="add-text ${text ? "" : "hidden"}"></div>
@@ -64,7 +64,7 @@ function addNewMemo(text = '') {
             ////// localStorage ////////////
         updateLocalStorage();
     })
-    
+
     memos.appendChild(memo);
     document.querySelector(main).appendChild(memos)
     /* document.body.appendChild(memo); */
@@ -76,13 +76,13 @@ function updateLocalStorage () {
     const memoInput = document.querySelectorAll('textarea');
 
     // the memo array, where the added memos go in
-    const memos = []
+    const memoArr = []
 
         // for each memo add the value to the array of memos
-    memoInput.forEach(memo => memos.unshift(memo.value));
+    memoInput.forEach(memo => memoArr.push(memo.value));
 
     // localstorage json
-    localStorage.setItem('memos', JSON.stringify(memos));
+    localStorage.setItem('memos', JSON.stringify(memoArr));
 }
 
 

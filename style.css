@@ -99,10 +99,10 @@ main {
 }
 
 .memo:hover {
-  display: inline-block;
+  display: block;
   width: 12em;
-  height: fit-content;
   min-height: 16em;
+  height: fit-content;
   z-index: 5;
   animation-delay: 0.3s;
   animation: up-bump 0.3s ease 1;
@@ -121,10 +121,31 @@ main {
   display: flex;
   justify-content: space-between;
   border-radius: 10px;
+  
+}
+
+.edit-btn {
+  position: absolute;
+  filter: drop-shadow(1px 2px rgba(0,0,0,0.9));
+}
+.fa-edit {
+  position: absolute;
+  top: 5px;
+  left: 1px;
+  color: rgb(126, 207, 126);
+}
+.fa-thumbtack {
+  position: absolute;
+  top: 2px;
+  left: 20px;
+  color: #fc9700e1;
+}
+.fa-trash-alt {
+  color: rgb(235, 118, 118);
 }
 
 .memo .memo-btns p {
-  margin-left: -40%;
+  margin-left: 20%;
   padding: 4px;
 }
 
@@ -140,7 +161,7 @@ main {
 
 .memo textarea {
   width: 96%;
-  height: 82%;
+  height: 100%;
   padding: 15px;
   margin: 3px;
   outline: none;
